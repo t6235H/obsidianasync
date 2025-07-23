@@ -69,10 +69,12 @@ C 语言的编译和执行过程分为 **预处理、编译、汇编、链接** 
 
 ```
 # 一步完成所有阶段  gcc main.c -o main 
-# 分步执行         gcc -E main.c -o main.i    
-# 预处理           gcc -S main.i -o main.s    
-# 编译             gcc -c main.s -o main.o    
-# 汇编             gcc main.o -o main         # 链接`
+
+# 分步执行         
+gcc -E main.c -o main.i    # 预处理           
+gcc -S main.i -o main.s    # 编译             
+gcc -c main.s -o main.o    # 汇编             
+gcc main.o -o main         # 链接
 ```
 ---
 

@@ -22,7 +22,7 @@ MessageBox()会根据字符集配置，自动使用不同的函数：
 
 里面有有四个常用的类型别名：
 - HWND Handle to a Window 窗口句柄                   ==指针或整数==      [[HWND]]
-- LPCSTR Long Pointer to Constant STR ing              ==const char*==
+- LPCSTR Long Pointer to Constant STR ing              ==const char*==      [[C.const指针]]
 - LPCWSTR Long Pointer to Constant Wide STRing  ==const wchar_t*==
 - UINT 无符号整数  typedef unsigned int UINT;        ==uint32_t== stdint.h->C || cstdint.h->C++                                       
 - **`LPWSTR`**：Long Pointer to Wide STRing                 ==wchar_t==  宽字符字符串
