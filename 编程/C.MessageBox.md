@@ -1,6 +1,16 @@
 #c语言 #基础 #windowsApi #编码 
 
 
+## 代码适配建议
+
+无论选择哪种字符集，建议使用通用的 `MessageBox` 宏，并确保字符串类型匹配：
+
+- 对于 Unicode：`L"宽字符串"`
+- 对于多字节：`"普通字符串"` 
+这样可以避免字符集不匹配的编译警告或错误。
+
+
+
 `#include <Windows.h>`
 
 `MessageBox(NULL,"打印操作完成","提示",MB_OK | MB_ICONWARNING);`
@@ -28,7 +38,9 @@ MessageBox()会根据字符集配置，自动使用不同的函数：
 - **`LPWSTR`**：Long Pointer to Wide STRing                 ==wchar_t==  宽字符字符串
 - **`LPCTSTR`**：条件性字符串指针，根据项目字符集配置自动映射为 `LPCSTR` 或 `LPCWSTR`。
 
-在 Visual Studio 2022 中设置 C 语言项目的字符集，可以按照以下步骤操作：
+## 在 Visual Studio 2022 中设置 C 语言项目的字符集，可以按照以下步骤操作：
+
+`项目属性 > 配置属性 > 高级 > 字符集`
 
 ### 步骤 1：打开项目属性页
 
@@ -55,19 +67,25 @@ MessageBox()会根据字符集配置，自动使用不同的函数：
 
 点击 **确定** 保存更改。
 
-### 示例截图位置
 
-如果需要可视化帮助，可以参考以下位置：
-
-```plaintext
-项目属性 > 配置属性 > 高级 > 字符集
-```
 
   
-### 代码适配建议
-
-无论选择哪种字符集，建议使用通用的 `MessageBox` 宏，并确保字符串类型匹配：
-
-- 对于 Unicode：`L"宽字符串"`
-- 对于多字节：`"普通字符串"` 
-这样可以避免字符集不匹配的编译警告或错误。
+## 让焦点转移到弹出的窗口上
+	
+	`MB_SETFOREGROUND`
+	
+- foreground  
+	
+	`英/ˈfɔːɡraʊnd/ 美/ˈfɔːrɡraʊnd/`    
+	
+	前景；最显著的位置
+	
+- 简单获得焦点
+	
+	`MessageBoxA(NULL, "内容", "标题", MB_OK | MB_SETFOREGROUND);`
+	
+- 强制获得焦点并置顶  
+	
+	`MessageBoxA(NULL, "重要消息", "标题", MB_OK | MB_SETFOREGROUND | MB_SYSTEMMODAL);`
+	
+- 

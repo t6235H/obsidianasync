@@ -2,7 +2,16 @@
 
 
 ```
-//stdlib.h
-system("pause");   
-//getchar()也可以，要两次ENTER,第一次刷新缓冲区
+stdlib.h
+system("pause");   调用系统暂停命令  只能在WINDOWS使用
+
+
+//getchar();       也可以  获取单字节
+int c =0;
+while (getchar() != '\n' && c != EOF);//清空缓冲区 EOF是-1 只要不是回车或文件结尾，就消耗
+printf("按回车键退出...");
+getchar();
+
+
+要两次ENTER,第一次刷新缓冲区
 ```
