@@ -6,3 +6,4 @@
 [[C.scanf]]
 [[C.MessageBox]]
 [[C.const指针]]
+[[C.字符串]]

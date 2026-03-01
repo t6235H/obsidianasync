@@ -55,9 +55,9 @@ pub extern "stdcall" fn free_string(ptr: *mut c_char) {
 
 #[unsafe(no_mangle)]
 
-pub extern "stdcall" fn utf8_convert_to_yiyuyan(input: *const c_char) -> *mut c_char {
+pub extern "stdcall" fn example_convert_to_yiyuyan(input: *const c_char) -> *mut c_char {
 
-    //返回的是一个“拥有所有权”的指针”，必须由调用者手动释放
+    //返回的是一个“拥有所有权”的指针”，必须由E手动释放
 
     //能被 CString::from_raw(ptr) 正确释放内存
 
@@ -81,7 +81,7 @@ pub extern "stdcall" fn utf8_convert_to_yiyuyan(input: *const c_char) -> *mut c_
 
     //CStr：C 的字符串借用（const char*）
 
-    //c_str的内存是易语言分配，rust不要多管闲事，易语言擦不擦屁股，和rust无关
+    //c_str的内存是易语言分配，rust不管，易语言擦不擦屁股，和rust无关
 
     //from_ptr() 从 C 的 char* 开始向后找 第一个 \0（null terminator）
 
@@ -137,11 +137,11 @@ pub extern "stdcall" fn utf8_convert_to_yiyuyan(input: *const c_char) -> *mut c_
 
     //CString的内存是rust分配的，rust要提供一个free_string函数，能把自己的屁股擦干净的纸
 
-    //但是所有权交给了易语言，擦屁股的动作要调用方来完成
+    //但是所有权交给了易语言，擦屁股的动作要来E完成
 
     //CString::new(result) 拥有了字符串的堆内存->你租了一个新房，复制了你旧家的数据
 
-    //into_raw()->你交出钥匙，不再续租，由调用方自己负责清理
+    //into_raw()->你交出钥匙，不再续租，由E自己负责清理
 
     //into_raw() 把这个 CString 拆成一个裸指针，夺走了 c_string 的内存所有权，并将其作为 *mut c_char 裸指针交给易语言
 
@@ -151,7 +151,7 @@ pub extern "stdcall" fn utf8_convert_to_yiyuyan(input: *const c_char) -> *mut c_
 
   
 
-//理解思路去看fn utf8_convert_to_yiyuyan，思路都在那里，现在的这个是处理GBK的，因为易语言的编码就是GBK
+//理解思路去看fn example_convert_to_yiyuyan，模板思路都在那里，现在的这个是真正的函数，要处理GBK的，因为易语言的编码就是GBK
 
 #[unsafe(no_mangle)]
 

@@ -18,3 +18,30 @@ set PATH=%PATH%;C:\tools\my-utils ; prompt $P$G
 
 - 当命令需对前一个命令无依赖时，用 `;` 或 `&`
 - 当命令有逻辑依赖（如 “先检查后执行”）时，用 `&&` 或 `||`
+
+It sets the command prompt to display:
+
+- **`$P`** = Current drive and path (e.g., `C:\Users\Username`)
+    
+- **`$G`** = Greater-than sign (`>`)
+## Common prompt codes:
+
+- `$P` - Current path
+    
+- `$G` - `>` (greater-than sign)
+    
+- `$L` - `<` (less-than sign)
+    
+- `$D` - Current date
+    
+- `$T` - Current time
+    
+- `$V` - Windows version number
+    
+- `$N` - Current drive letter
+    
+- `$H` - Backspace (erases previous character)
+    
+- `$_` - Carriage return (new line)
+    
+- `$$` - `$` (dollar sign)

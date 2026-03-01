@@ -86,12 +86,12 @@ export CC=i686-pc-windows-gnu-gcc
 
 ### 三、与其他类似标识的对比
 
-|目标三元组|适用场景|工具链特点|
-|---|---|---|
-|`i686-pc-windows-gnu`|32 位 Windows + MinGW/MSYS2|开源工具链，兼容 GNU 生态|
-|`x86_64-pc-windows-gnu`|64 位 Windows + MinGW/MSYS2|同上，支持 64 位架构|
-|`x86_64-pc-windows-msvc`|64 位 Windows + Visual Studio|微软官方工具链，依赖 MSVC 运行库|
-|`i686-unknown-linux-gnu`|32 位 Linux 系统|适用于老旧服务器或嵌入式设备|
+| 目标三元组                    | 适用场景                         | 工具链特点               |
+| ------------------------ | ---------------------------- | ------------------- |
+| `i686-pc-windows-gnu`    | 32 位 Windows + MinGW/MSYS2   | 开源工具链，兼容 GNU 生态     |
+| `x86_64-pc-windows-gnu`  | 64 位 Windows + MinGW/MSYS2   | 同上，支持 64 位架构        |
+| `x86_64-pc-windows-msvc` | 64 位 Windows + Visual Studio | 微软官方工具链，依赖 MSVC 运行库 |
+| `i686-unknown-linux-gnu` | 32 位 Linux 系统                | 适用于老旧服务器或嵌入式设备      |
 
 ### 四、如何查看当前系统的目标三元组？
 

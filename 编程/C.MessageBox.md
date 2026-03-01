@@ -32,7 +32,7 @@ MessageBox()会根据字符集配置，自动使用不同的函数：
 
 里面有有四个常用的类型别名：
 - HWND Handle to a Window 窗口句柄                   ==指针或整数==      [[HWND]]
-- LPCSTR Long Pointer to Constant STR ing              ==const char*==      [[C.const指针]]
+- LPCSTR Long Pointer to Constant STRing              ==const char*==      [[C.const指针]]
 - LPCWSTR Long Pointer to Constant Wide STRing  ==const wchar_t*==
 - UINT 无符号整数  typedef unsigned int UINT;        ==uint32_t== stdint.h->C || cstdint.h->C++                                       
 - **`LPWSTR`**：Long Pointer to Wide STRing                 ==wchar_t==  宽字符字符串
@@ -88,4 +88,11 @@ MessageBox()会根据字符集配置，自动使用不同的函数：
 	
 	`MessageBoxA(NULL, "重要消息", "标题", MB_OK | MB_SETFOREGROUND | MB_SYSTEMMODAL);`
 	
-- 
+
+| 标志                 | 作用         |
+| ------------------ | ---------- |
+| `MB_SETFOREGROUND` | 强制获得焦点     |
+| `MB_SYSTEMMODAL`   | 系统模态（最强制）  |
+| `MB_APPLMODAL`     | 应用程序模态（默认） |
+| `MB_TOPMOST`       | 总是置顶       |
+

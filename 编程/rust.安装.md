@@ -14,6 +14,15 @@
 2. **终端运行该命令**会下载并运行 ==rustup== 安装脚本
 	```
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	
+	
+	The `-sSf` flags mean:
+
+- `-s`: Silent mode (don't show progress meter or error messages)
+    
+- `-S`: Show errors even in silent mode (used with -s)
+    
+- `-f`: Fail silently on server errors (return error code on HTTP errors)
 	```
 	
 3. **安装选项**，推荐按1，并回车
